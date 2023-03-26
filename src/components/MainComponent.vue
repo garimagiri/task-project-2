@@ -4,33 +4,33 @@
       <div class="col-sm-1 mt-5">
         <div class="row mb-3">
           <div class="symbol symbol-45px">
-            <img src="../assets/150-10.jpg" alt=""/>
+            <img src="../assets/150-10.jpg" alt="" />
           </div>
         </div>
         <div class="row mb-3">
           <div class="symbol symbol-45px">
-            <img src="../assets/150-14.jpg" alt=""/>
+            <img src="../assets/150-14.jpg" alt="" />
           </div>
         </div>
         <div class="row mb-3">
           <div class="symbol symbol-45px">
-            <img src="../assets/150-16.jpg" alt=""/>
+            <img src="../assets/150-16.jpg" alt="" />
           </div>
         </div>
         <div class="row mb-3">
           <div class="symbol symbol-45px">
-            <img src="../assets/150-20.jpg" alt=""/>
+            <img src="../assets/150-20.jpg" alt="" />
           </div>
         </div>
         <div class="row mb-3">
           <div class="symbol symbol-45px">
-            <img src="../assets/150-7.jpg" alt=""/>
+            <img src="../assets/150-7.jpg" alt="" />
           </div>
         </div>
       </div>
       <div class="col-sm-5">
         <img
-          src="../assets/demo_image_1.jpg"
+          :src="image"
           alt=""
           class="w-100 h-75 rounded"
         />
@@ -53,22 +53,23 @@
           <span class="fw-bold">privacy </span>for your digital life
         </div>
         <div>
-            <div class="me-5"> 
-          <ul class="nav nav-tabs nav-justified">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                data-bs-toggle="tab"
-                href="#kt_tab_pane_1"
-                >Individual</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_2"
-                >Family</a
-              >
-            </li>
-          </ul></div>
+          <div class="me-5">
+            <ul class="nav nav-tabs nav-justified">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  data-bs-toggle="tab"
+                  href="#kt_tab_pane_1" @click="getImage1()"
+                  >Individual</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" @click="getImage()" href="#kt_tab_pane_2"
+                  >Family</a
+                >
+              </li>
+            </ul>
+          </div>
           <div class="tab-content mt-4" id="myTabContent">
             <div
               class="tab-pane fade show active"
@@ -76,7 +77,7 @@
               role="tabpanel"
               aria-labelledby="kt_tab_pane_1"
             >
-              <IndividualTab/>
+              <IndividualTab />
             </div>
             <div
               class="tab-pane fade"
@@ -84,7 +85,7 @@
               role="tabpanel"
               aria-labelledby="kt_tab_pane_2"
             >
-            <FamilyTab/>
+              <FamilyTab />
             </div>
           </div>
         </div>
@@ -108,13 +109,27 @@
 </template>
 
 <script>
-import IndividualTab from './IndividualTab.vue'
-import FamilyTab from './FamilyTab.vue'
+import IndividualTab from "./IndividualTab.vue";
+import FamilyTab from "./FamilyTab.vue";
 export default {
   name: "MainComponent",
-  components:{
+  components: {
     IndividualTab,
-    FamilyTab
+    FamilyTab,
+  },
+  data(){
+    return{
+        image : require('../assets/demo_image_1.jpg'),
+        
+    }
+  },
+  methods: {
+    getImage(){
+        this.image = require('../assets/demo_image_2.jpg');
+    },
+    getImage1(){
+       this.image = require('../assets/demo_image_1.jpg');
+    }
   }
 };
 </script>
