@@ -81,7 +81,17 @@ body{
     height: 75vh;
     border-radius: 20px;
 }
+.background-css2{
+    background-color: #333334;
+    height: 75vh;
+    border-radius: 40px;
+}
 .protection-box{
     width: 30%;
     border-radius: 10px;
+}
+.protection-box2{
+    background-color: rgb(133, 173, 203);
+    width: 25%;
+    border-radius: 40px;
 }
