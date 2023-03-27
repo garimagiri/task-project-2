@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div @scroll="handleScroll">
     <div class="position-relative background-css">
       <div
         class="position-absolute top-50 end-0 translate-middle-y bg-white p-3 me-5 protection-box"
-        
+        v-if="isVisible"
       >
         <div class="fs-9">
           <span class="badge bg-danger me-2">New</span
@@ -21,7 +21,11 @@
           <span class="fw-bold">All-in-one</span>
           protection
         </div>
-        <p class="fs-8">Online protection for your identity, privacy, and devices, includes antivirus, VPN, and Protection Score. <span class="fw-bold">Family plans are now available.</span></p>
+        <p class="fs-8">
+          Online protection for your identity, privacy, and devices, includes
+          antivirus, VPN, and Protection Score.
+          <span class="fw-bold">Family plans are now available.</span>
+        </p>
         <div class="d-flex my-3 align-items-center">
           <button
             class="btn btn-danger fs-8 me-4"
@@ -39,19 +43,20 @@
           </button>
         </div>
       </div>
-    </div>
-    <div style="height: 80vh">
-        <div
-        class="border bg-white p-3 me-5 protection-box"
-        
-      >
-        <div class="mb-2 fs-5 fw-bolder">
-          
-          All-in-one protection
-        </div>
-        <p class="fs-8">Online protection for your identity, privacy, and devices, includes antivirus, VPN, and Protection Score. <span class="fw-bold">Family plans are now available.</span></p>
+
+      <div v-else class="position-absolute top-50 end-0 translate-middle-y bg-white p-3 me-5 protection-box">
+        <div class="mb-2 fs-5 fw-bolder">All-in-one protection</div>
+        <p class="fs-8">
+          Online protection for your identity, privacy, and devices, includes
+          antivirus, VPN, and Protection Score.
+          <span class="fw-bold">Family plans are now available.</span>
+        </p>
         <div>$49.99* <span class="fs-8">/yr</span></div>
-        <div class="fs-7"><span class="text-decoration-line-through text-secondary me-1">$149.99 </span><span class="text-danger">(Save $100)</span></div>
+        <div class="fs-7">
+          <span class="text-decoration-line-through text-secondary me-1"
+            >$149.99 </span
+          ><span class="text-danger">(Save $100)</span>
+        </div>
         <div class="d-flex my-3 align-items-center">
           <button
             class="btn btn-danger fs-8 me-4"
@@ -70,11 +75,30 @@
         </div>
       </div>
     </div>
+    <div style="height: 50Vh;"></div>
+      
+    
   </div>
 </template> 
 <script>
 export default {
   name: "ThirdSection",
-   
+  data() {
+    return {
+      isVisible: true,
+    };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 900) {
+        this.isVisible = false;
+      } else {
+        this.isVisible = true;
+      }
+    },
+  },
 };
 </script>

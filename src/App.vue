@@ -17,7 +17,7 @@ export default {
     HeaderComponent,
     MainComponent,
     ThirdSection
-  }
+  },
 }
 </script>
 
