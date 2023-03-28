@@ -1,52 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap');
 
 :root {
-    --primary-color:#be123c ;
+    --primary-color: #be123c;
     --dark-gray: #6B7280;
     --off-white: #F3F4F6;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background: #ffffff;
     margin: 0;
 }
+
 .fs-7 {
     font-size: 15px;
 }
-.fs-8{
+
+.fs-8 {
     font-size: 13px;
 }
-.fs-9{
+
+.fs-9 {
     font-size: 10px;
 }
+
 .symbol {
     display: inline-block;
     flex-shrink: 0;
     position: relative;
     border-radius: 0.475rem;
 }
-.symbol.symbol-45px > img{
+
+.symbol.symbol-45px>img {
     width: 65px;
     height: 65px;
 }
-.symbol > img {
-    border-radius: 0.475rem; 
+
+.symbol>img {
+    border-radius: 0.475rem;
 }
-.nav-link{
+
+.nav-link {
     color: var(--dark-gray);
 }
-.nav-link:hover, .nav-link.active{
+
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary-color);
 }
+
 .nav-tabs {
     border-bottom: 1.5px solid #dee2e6;
 }
+
 .nav-tabs .nav-link {
     border-top: 0;
     border-left: 0;
     border-right: 0;
 }
+
 .nav-tabs .nav-link.active {
     border-top: 0;
     border-left: 0;
@@ -54,26 +66,35 @@ body{
     border-bottom: 2px solid #0a58ca;
     color: black;
 }
-.nav-tabs .nav-link:hover{
+
+.nav-tabs .nav-link:hover {
     color: black;
-    
+
     border-bottom: 1.5px solid #dee2e6;
 }
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
     border-top: 0;
     border-left: 0;
     border-right: 0;
 }
+
 .pricing-box {
     border: 1.5px solid rgb(189, 188, 188);
     border-radius: 10px;
-}
-.pricing-box:active{   
-   outline: none !important;
-   border-color: #0a58ca;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.background-css{
+.pricing-box:active,
+.pricing-box:focus,
+.pricing-box:hover {
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 1px #0a58ca;
+
+}
+
+.background-css {
     background-image: url('./demo_image_2.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -81,16 +102,19 @@ body{
     height: 75vh;
     border-radius: 20px;
 }
-.background-css2{
+
+.background-css2 {
     background-color: #333334;
     height: 75vh;
     border-radius: 40px;
 }
-.protection-box{
+
+.protection-box {
     width: 30%;
     border-radius: 10px;
 }
-.protection-box2{
+
+.protection-box2 {
     background-color: rgb(133, 173, 203);
     width: 25%;
     border-radius: 40px;
